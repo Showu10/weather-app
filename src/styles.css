@@ -1,0 +1,44 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.position-relative {
+  display: flex;
+}
+
+.left {
+  clear: both;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.hor {
+  display: flex;
+}
+
+.hor li {
+  width: 100%;
+}
