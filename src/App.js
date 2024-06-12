@@ -6,7 +6,7 @@ import "./styles.css";
 function Week() {
   function getData() {
     fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=28.6519&longitude=77.2315&current=temperature_2m&daily=temperature_2m_max,temperature_2m_min&past_days=1"
+      "https://api.open-meteo.com/v1/forecast?latitude=28.6519&longitude=77.2315&current=temperature_2m&daily=temperature_2m_max,temperature_2m_min&past_days=1",
     )
       .then((res) => res.json())
       .then((data) => {
@@ -72,16 +72,16 @@ function Home() {
 function Day() {
   const { id } = useParams();
   fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=28.6519&longitude=77.2315&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_hours&past_days=92&forecast_days=16"
+    "https://api.open-meteo.com/v1/forecast?latitude=28.6519&longitude=77.2315&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_hours&past_days=92&forecast_days=16",
   )
     .then((res) => res.json())
     .then((data) => {
-      x = data.daily.time.indexOf(id);
-      day = `<h2>${data.daily.time[x]}</h1>`;
-      max = `<h3>Max Temp: ${data.daily.temperature_2m_max[x]}</h2>`;
-      min = `<h3>Min Temp: ${data.daily.temperature_2m_min[x]}</h2>`;
-      sun = `<h3>Sunrise: ${data.daily.sunrise[x]}</h2>`;
-      set = `<h3>Sunset: ${data.daily.sunset[x]}</h2>`;
+      const x = data.daily.time.indexOf(id);
+      const day = `<h2>${data.daily.time[x]}</h1>`;
+      const max = `<h3>Max Temp: ${data.daily.temperature_2m_max[x]}</h2>`;
+      const min = `<h3>Min Temp: ${data.daily.temperature_2m_min[x]}</h2>`;
+      const sun = `<h3>Sunrise: ${data.daily.sunrise[x]}</h2>`;
+      const set = `<h3>Sunset: ${data.daily.sunset[x]}</h2>`;
       document.getElementById("days").innerHTML = day;
       document.getElementById("max").innerHTML = max;
       document.getElementById("min").innerHTML = min;
